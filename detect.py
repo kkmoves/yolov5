@@ -170,6 +170,10 @@ def run(
                     if save_img or save_crop or view_img:  # 将bbox添加到图像中
                         c = int(cls)  # integer class
 
+                        # if names[int(cls)] == "person":  # 设置判断识别物体类别 "摩托车" 20230505
+                        #     label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
+                        #     annotator.box_label(xyxy, label, color=colors(c, True))
+
                         if names[int(cls)] == "motorcycle":  # 设置判断识别物体类别 "摩托车" 20230505
                             label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                             annotator.box_label(xyxy, label, color=colors(c, True))
